@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+Typical JSONP endpoint with content-type "application/javascript" can be used as script source in all modern browsers. Typically used to bypass CSP when callback-value is injectable (`/endpoint?callback=alert(1);//`). 
+<script>
+function callback(cb) {
+  alert("key: " + Object.keys(cb) + "\nvalue: " + cb.key1);
+}
+</script>
+<script src="cb.js"></script>
+</body>
+</html>
